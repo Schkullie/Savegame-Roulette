@@ -1,4 +1,3 @@
-//const names = [];
 previous = [];
 result = []
 const formatDate = (date) => {
@@ -55,7 +54,7 @@ function onReaderLoad(event){
     previous.forEach(element => document.getElementById('old').innerHTML += '<tr><td>' + decodeURI(element.name) + '</td><td>' + decodeURI(element.save) + '</td></tr>')
     if (document.getElementById('random').disabled == true && previous.length > 2) {
         document.getElementById('random').removeAttribute("disabled")
-        document.getElementById('random').setAttribute('class', 'btn btn-primary')
+        document.getElementById('random').setAttribute('class', 'btn btn-primary position-absolute start-50 translate-middle-x')
     }
 }
 document.getElementById('file').addEventListener('change', onChange);
@@ -90,7 +89,7 @@ random.addEventListener('click', () =>{
     document.getElementById('output').innerHTML = "<tr><th>Spieler</th><th>Speicherstand</th></tr>"
 	result.forEach(element => document.getElementById('output').innerHTML += '<tr><td>' + decodeURI(element.name) + '</td><td>' + decodeURI(element.save) + '</td></tr>')
     document.getElementById('download').removeAttribute("disabled")
-    document.getElementById('download').setAttribute('class', 'btn btn-primary');
+    document.getElementById('download').setAttribute('class', 'btn btn-primary position-absolute start-50 translate-middle-x');
 });
 
 download = document.getElementById('download');
