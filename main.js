@@ -1,6 +1,15 @@
 //const names = [];
 previous = [];
 result = []
+const formatDate = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+};
+const currentDate = new Date();
+date = formatDate(currentDate);
 
 document.getElementById('random').disabled = true;
 document.getElementById('download').disabled = true;
@@ -87,7 +96,7 @@ random.addEventListener('click', () =>{
 download = document.getElementById('download');
 download.addEventListener('click', () =>{
     console.log(result)
-    const filename = 'Auslosung.json';
+    const filename = 'Auslosung '+date+'.json';
     const jsonStr = JSON.stringify(result);
 
     let element = document.createElement('a');
