@@ -10,8 +10,8 @@
 
   <body>
     <h3>Savegame Roulette</h3>
+    <h5>Vorherige Auslosung:</h5>
     <div sytle="max-width: fit-content; margin-left: auto; margin-right: auto;">
-      <h5>Vorherige Auslosung:</h5>
       <table id="old">
         <tr>
           <th>Spieler</th>
@@ -19,13 +19,15 @@
         </tr>
       </table>
       <br>
-      <div class="input-group mb-3">
+      <div class="input-group mb-4">
         <input class="input-group-text" placeholder="Spielername" id="playername" type="text">
         <input class="input-group-text" placeholder="Speicherstand von" id="savename" type="text">
         <button class="btn btn-primary" id="buttonplayername">Hinzufügen</button>
+        <button class="btn btn-primary" id="upload">Hochladen</button>
+        <input id='file' type='file' accept=".json" hidden/>
       </div>
-      
-      <br>
+    
+      <br><br>
       <button class="btn btn-secondary" id="random" disabled>Auslosen</button>
       
       <br><br>
@@ -36,6 +38,8 @@
           <th>Speicherstand</th>
         </tr>
       </table>
+      <br><br>
+      <button class="btn btn-secondary" id="download" disabled>Herunterladen</button>
     </div>
   </body>
 </html>
